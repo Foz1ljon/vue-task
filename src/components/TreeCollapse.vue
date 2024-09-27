@@ -3,7 +3,8 @@
     <li v-for="(node, index) in nodes" :key="index" class="mb-1">
       <div
         @click="toggleCollapse(node)"
-        class="cursor-pointer flex items-center gap-2 p-2 bg-white rounded-lg shadow hover:bg-gray-50 transition"
+        class="cursor-pointer flex items-center gap-2 p-2 bg-white rounded-sm shadow hover:bg-gray-50 transition"
+        :class="{ 'border-l-4 border-blue-500': !node.children || !node.children.length }"
       >
         <span v-if="node.children && node.children.length">
           <ArrowComponent :collapse="node.collapsed" />
